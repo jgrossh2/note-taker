@@ -176,5 +176,8 @@ if (window.location.pathname === '/notes') {
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
+module.exports = {
+  saveNote
+}; 
 
 getAndRenderNotes();
