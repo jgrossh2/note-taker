@@ -1,8 +1,7 @@
 const express = require('express');
 const fs = require('fs');
-const path = require('path');
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+const apiRoutes = require('./routes/apiRoutes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes/htmlRoutes');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -17,3 +16,5 @@ app.use('/', htmlRoutes);
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);
 });
+//heroku created
+// https://shrouded-reef-18833.herokuapp.com/ | https://git.heroku.com/shrouded-reef-18833.git
