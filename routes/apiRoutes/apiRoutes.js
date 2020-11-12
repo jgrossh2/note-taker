@@ -1,23 +1,24 @@
 const FileSaver = require('file-saver');
+const { truncateSync } = require('fs');
 const path = require('path');
 // const { report } = require('./htmlRoutes');
 const router = require('express').Router();
 const { notes } = require('../../db/db');
-const { saveNote } = require('../../public/assets/js/index');
+// const { saveNote } = require('../../public/assets/js/index');
 
 router.get('/notes', (req, res) => {
     //taking notes array and setting as note
     res.json(note)
 });
 router.post('/notes', (req, res) => {
-    req.body.id = notes.length.toString();
-    const newNote = saveNote(req.body, notes)
-    // const newNote = req.body;
-    // console.log(newNote)
+    // req.body.id = notes.length.toString();
+    // const newNote = saveNote(req.body, notes)
+    const newNote = req.body;
+    console.log(newNote)
     //create an array to push newNote to from db.json file
-    // notes.push(newNote);
+    notes.push(newNote);
     //return new note to client
-    // res.json(newNote);
+    res.json(newNote);
     // FileSaver.saveAs(newNote, note text)
     //creates id per note
     // const userId = uuid4();
@@ -28,7 +29,9 @@ router.post('/notes', (req, res) => {
     //     title, 
     //     text
     // })
-    res.json(newNote)
+    // res.json(newNote)
+    res.send("New task");
+    console.log()
 })
 
 module.exports = router;
