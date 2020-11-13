@@ -16,7 +16,7 @@ router.get('/notes', (req, res) => {
 router.post('/notes', (req, res) => {
     store   
         .addNote(req.body)
-        .then((newNote) => res.json(newNote));
+        .then((notes) => res.json(notes));
     // req.body.id= notes.length.toString();
     
     // const newNote = saveNote(req.body, notes)

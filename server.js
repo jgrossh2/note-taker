@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 //connect css and js files-middleware function
 app.use(express.static('public'));
-//prase incoming string or array data
+//parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/api', apiRoutes);

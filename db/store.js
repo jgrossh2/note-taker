@@ -1,18 +1,25 @@
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
+const util = require('util');
+const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
+
 
 class Store {
     read() {
-        return fs.readFile("db/db.json", (err, data) => {
+        return readFileAsync("db/db.json", (err, data) => {
             if (err) throw err;
             console.log(data);
         });
     }
     write(note) {
-        return fs.writeFile("db/db.json", JSON.stringify(note));
+        return writeFileAsync("db/db.json", JSON.stringify(note));
     }
-    getNotes(notes) {
-        return this.read().then(notes)
+    getNotes() {
+        return this.read().then((notes) => {
+            JSON.parse(notes);
+            res.json(notes);
+        });
     }
 
     addNote(note) {
@@ -25,10 +32,13 @@ class Store {
         //adds id to new note object
         const newNote = { title, text, id: userId };
         //get notes, add to notes, update notes
-        return this.getNotes()
-            .then(notes.push(newNote))
-            .then(getNotes())
-            .then(write());
+        return this.getNotes().then((notes) => {
+            notes.push(newNote);
+            getNotes();
+            console.log(notes)
+        });
+            // .then(getNotes())
+            // .then(write());
     }
     // deleteNote
 
