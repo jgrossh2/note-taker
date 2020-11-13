@@ -1,20 +1,20 @@
 const router = require('express').Router();
 const { notes } = require('../../db/db');
-const { read, write, getNotes, addNote } = require('../../db/store');
+const Store = require('../../db/store');
 
 router.get('/notes', (req, res) => {
-    
-        getNotes(notes)
-        .then((notes) => {
-            return res.json(notes);
-        })
-        .catch((err) => {
-            res.json("error");
-        });
+    // Store
+        // .getNotes()
+        const result = notes;
+        return res.json(result);
+        // .catch((err) => {
+        //     res.json("error");
+        // });
     //taking notes array and setting as note 
 });
 router.post('/notes', (req, res) => {  
-        addNote(req.body)
+    Store
+        .addNote(req.body)
         .then((notes) => res.json(notes));
     // req.body.id= notes.length.toString();
     
