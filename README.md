@@ -2,10 +2,11 @@
 
 ## Description
 
-The Note Taker application was created in order to help organize a list of notes from a user. The user is able to enter a note title and description, and then save the note to a list. This list will persist even if the server restarts. Any note can be revisited, or deleted.
+The Note Taker application was created in order to help organize a list of notes from a user. After navigating through the homepage, the user is able to enter a note title and description, and then save the note to a list. This list will persist even if the server restarts. Any note can be revisited by clicking on the saved note, or deleted.
 
 ## Images 
-![Readme](./images/team-information-image.png) <br>
+![Note taker homepage](./images/image-1.png) <br>
+![Note taker with notes](./images/image-2.png) 
 
 
 ## Installation
