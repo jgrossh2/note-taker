@@ -1,39 +1,37 @@
 const router = require('express').Router();
 const { notes } = require('../../db/db');
+const { write } = require('../../db/store');
 const Store = require('../../db/store');
 
 router.get('/notes', (req, res) => {
-    // Store
-        // .getNotes()
+    //setting array as var
         const result = notes;
         return res.json(result);
-        // .catch((err) => {
-        //     res.json("error");
-        // });
-    //taking notes array and setting as note 
 });
 router.post('/notes', (req, res) => {  
     Store
         .addNote(req.body)
+        //post notes to json array
         .then((notes) => res.json(notes));
-    // req.body.id= notes.length.toString();
-    
-    // const newNote = saveNote(req.body, notes)
-    // const newNote = req.body;
-    // console.log(newNote)
-    // //create an array to push newNote to from db.json file
-    // notes.push(newNote);
-    // //return new note to client
-    // res.json(newNote);
-    // //creates id per note
-    // const userId = uuidv4()
-    // // //saving record to the database 
-    // // //with attaching userid to each record
-    // const keepNote = newNote.userId 
-    // notes.push(keepNote);
-    // // res.json(notes)
-    // // res.send("New task");
-    // console.log(userId)
 });
-
+router.delete('/notes/:id', (req, res) => {
+    
+        // read page
+        var data = Store.read(data)
+        console.log("data", data)
+        const id = req.params.id
+        //parse data into array
+        let dataArray = JSON.parse(data);
+        // filter data in order to find if id of note matches, only keeps ids that do not match
+        //filter creates new array
+        let filterData = dataArray.filter(note => note.id !== id);
+        //write file to update with filteredData
+        write(filterData);
+        //return 
+        res.json("Done!")
+        
+            
+});
 module.exports = router;
+
+

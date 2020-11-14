@@ -36,6 +36,10 @@ class Store {
             console.log(notes)
         });
     }
+    // deleteNote(note) {
+        //find id of note when clicked and match to array to remove
+        
+    
 
 }
 
