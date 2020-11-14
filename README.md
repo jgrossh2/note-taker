@@ -18,6 +18,8 @@ Note taker application was created in order to help organize a list of notes fro
     Joanna Grosshans, creator
 ## Tests
     none
+## Links
+https://jgrossh2.github.io/note-taker/
 ## Questions
 jgrossh2 <br />
 [GitHub](https://github.com/jgrossh2/note-taker) <br />
