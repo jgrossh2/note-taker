@@ -1,7 +1,7 @@
 const router = require('express').Router();
 //.js implied with using file names for require
-const apiRoutes = require('../apiRoutes/apiRoutes');
-const htmlRoutes = require('../htmlRoutes/htmlRoutes');
+const apiRoutes = require('../apiRoutes');
+const htmlRoutes = require('../htmlRoutes');
 
 router.use(apiRoutes);
 router.use(htmlRoutes);

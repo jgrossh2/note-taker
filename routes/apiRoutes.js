@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Store = require('../../db/store');
+const Store = require('../db/store');
 
 router.get('/notes', async (req, res) => {
     var data = await Store.read()
