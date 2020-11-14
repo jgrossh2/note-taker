@@ -2,16 +2,16 @@
 
 ## Description
 
-Note taker application was created in order to help organize a list of notes from a user. The user is able to enter a note title and description, and then save the note to a list. This list will persist even if the server restarts. Any note can be revisited, or deleted. [screencastify Readme-generate](https://drive.google.com/file/d/139rWasnehmKHMCJDNQ9dB0TwiucsFiLr/view).
+The Note Taker application was created in order to help organize a list of notes from a user. The user is able to enter a note title and description, and then save the note to a list. This list will persist even if the server restarts. Any note can be revisited, or deleted.
 
 ## Images 
 ![Readme](./images/team-information-image.png) <br>
 
 
 ## Installation
-    Node, NPM install inquirer, express, file-saver, uuid
+    Node, NPM install inquirer, express, uuid
 ## Usage
-    for personal use, run "node Index.js" in the command line
+    for personal use, run "node server.js" in the command line
 ## License
     none
 ## Contributors
@@ -30,3 +30,4 @@ Please contact <joannagrosshans2@gmail.com> for additional Information.
 * CSS<br>
 * JS <br>
 * Node <br>
+* Express
